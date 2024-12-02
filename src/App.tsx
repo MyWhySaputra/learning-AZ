@@ -1,3 +1,17 @@
+import { RouterProvider } from "react-router-dom";
+import router from "./router";
+// import { useLoading } from "./contex/loading";
+import { PrimeReactProvider } from "primereact/api";
+import "primereact/resources/themes/lara-light-cyan/theme.css";
+
 export default function App() {
-  return <h1 className="text-3xl font-bold underline font-serif">Hello world!</h1>;
+  // const { setLoading } = useLoading();
+  // setLoading(true);
+  return (
+    <>
+      <PrimeReactProvider>
+        <RouterProvider router={router} />
+      </PrimeReactProvider>
+    </>
+  );
 }

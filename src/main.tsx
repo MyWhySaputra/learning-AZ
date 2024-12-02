@@ -1,10 +1,18 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import { StrictMode, Suspense } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import { LoadingProvider } from "./contex/loading.tsx";
+import { MantineProvider } from "@mantine/core";
+import App from "./App.tsx";
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <LoadingProvider>
+      <Suspense>
+        <MantineProvider>
+          <App />
+        </MantineProvider>
+      </Suspense>
+    </LoadingProvider>
+  </StrictMode>
+);
