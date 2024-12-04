@@ -5,7 +5,6 @@ import { Product } from "../../models/autoselect";
 export const ReactSelects = ({ data }: { data: Product[] }) => {
   const [query, setQuery] = useState("");
 
-  // Fungsi untuk memformat label dengan teks yang ditebalkan
   const formatOptionLabel = (item: Product) => {
     const lowerCaseTitle = item.title.toLowerCase();
     const lowerCaseQuery = query.toLowerCase();
@@ -28,16 +27,42 @@ export const ReactSelects = ({ data }: { data: Product[] }) => {
     );
   };
 
+  // Kustomisasi gaya di react-select
+  const customStyles = {
+    control: (provided: any) => ({
+      ...provided,
+      borderColor: "#ccc", // Mengubah border kontrol
+      "&:hover": {
+        borderColor: "#999", // Mengubah border saat hover
+      },
+      boxShadow: "none", // Menghilangkan shadow biru
+    }),
+    singleValue: (provided: any) => ({
+      ...provided,
+      color: "#333", // Warna teks produk yang dipilih
+    }),
+    menu: (provided: any) => ({
+      ...provided,
+      backgroundColor: "white", // Ubah warna background dropdown
+    }),
+    option: (provided: any, state: any) => ({
+      ...provided,
+      backgroundColor: state.isSelected ? "#f0f0f0" : "white", // Warna latar belakang opsi yang dipilih
+      color: state.isSelected ? "black" : "#333", // Warna teks saat opsi dipilih
+      "&:hover": {
+        backgroundColor: "#f5f5f5", // Hover state
+      },
+    }),
+  };
+
   return (
     <div className="font-Parkinsans">
       <Select
         options={data}
-        getOptionLabel={(e) => e.title} // Ensure title is used for filtering
-        formatOptionLabel={formatOptionLabel} // Highlight matching text
-        onInputChange={(value) => setQuery(value)} // Track user input
-        onChange={(selectedOption) =>
-          alert(`You selected: ${(selectedOption as Product).title}`)
-        }
+        getOptionLabel={(e) => e.title}
+        formatOptionLabel={formatOptionLabel}
+        onInputChange={(value) => setQuery(value)}
+        styles={customStyles} // Terapkan custom styles
         placeholder="Search products..."
         className="basic-single"
         classNamePrefix="select"

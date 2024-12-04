@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, SetStateAction } from "react";
 
 export default function DatePicker2() {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [selectedStartDate, setSelectedStartDate] = useState(null);
+  const [selectedStartDate, setSelectedStartDate] = useState<string | null>(null);
   const [selectedEndDate, setSelectedEndDate] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -56,7 +56,7 @@ export default function DatePicker2() {
     return daysArray;
   };
 
-  const handleDayClick = (selectedDay) => {
+  const handleDayClick = (selectedDay: string) => {
     if (!selectedStartDate || (selectedStartDate && selectedEndDate)) {
       setSelectedStartDate(selectedDay);
       setSelectedEndDate(null);
@@ -95,7 +95,7 @@ export default function DatePicker2() {
     setIsOpen(false);
   };
 
-  const handleDocumentClick = (e) => {
+  const handleDocumentClick = (e: { target: any; }) => {
     if (datepickerRef.current && !datepickerRef.current.contains(e.target)) {
       setIsOpen(false);
     }
@@ -110,15 +110,8 @@ export default function DatePicker2() {
   }, []);
 
   return (
-    <section className="bg-white py-20 lg:py-[120px] dark:bg-dark">
-      <div className="container">
-        <div className="-mx-4 flex flex-wrap">
-          <div className="w-full ">
-            <div className="mb-12">
-              <label className="mb-[10px] block text-base font-medium text-dark dark:text-white">
-                Date range picker
-              </label>
-
+    <section className="bg-white dark:bg-dark">
+            <div className="">
               <div className="relative" ref={datepickerRef}>
                 <div className="relative flex items-center">
                   <span className="absolute left-0 pl-5 text-dark-5">
@@ -317,9 +310,6 @@ export default function DatePicker2() {
                 )}
               </div>
             </div>
-          </div>
-        </div>
-      </div>
     </section>
   );
 }

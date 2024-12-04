@@ -1,22 +1,26 @@
-import axios from "axios";
+// import axios from "axios";
 import { useEffect, useState } from "react";
 import { Product } from "../../models/autoselect";
 import { NoLibrary } from "../../components/AutoComplate/NoLibrary";
 import { ReactSelects } from "../../components/AutoComplate/ReactSelect";
+import datas from "../../data/products.json";
+
 
 export const AutoSelectPage = () => {
   const [data, setData] = useState<Product[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { data } = await axios.get("https://fakestoreapi.com/products");
-        setData(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-    fetchData();
+    // const fetchData = async () => {
+    //   try {
+    //     const { data } = await axios.get("https://fakestoreapi.com/products");
+    //     setData(data);
+    //   } catch (error) {
+    //     console.error("Error fetching data:", error);
+    //   }
+    // };
+    // fetchData();
+    const datasWithDate = datas.map((data) => ({ ...data, date: new Date() }));
+    setData(datasWithDate)
   }, []);
   return (
     <>
@@ -52,8 +56,8 @@ export const AutoSelectPage = () => {
               {/* row 3 */}
               {/* <tr>
                 <th>3</th>
-                <td>Brice Swyre</td>
-                <td>Tax Accountant</td>
+                <td>Flowbite</td>
+                <td><FlowBite data={data} /></td>
               </tr> */}
             </tbody>
           </table>

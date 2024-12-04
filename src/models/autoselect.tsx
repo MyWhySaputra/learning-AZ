@@ -5,6 +5,7 @@ export interface Rating {
 
 // Product type
 export interface Product {
+  date: string | number | Date;
   id: number;
   title: string;
   price: number;
