@@ -1,0 +1,496 @@
+[
+  {
+    "id": 1,
+    "nama_lengkap": "Budi Santoso",
+    "jenis_kelamin": "Laki-laki",
+    "tanggal_lahir": "1975-03-15",
+    "agama": "Islam",
+    "pendidikan": "S1 Teknik Sipil",
+    "status": "AYAH",
+    "children": [
+      {
+        "id": 2,
+        "nama_lengkap": "Dewi Kartika",
+        "jenis_kelamin": "Perempuan",
+        "tanggal_lahir": "1978-06-10",
+        "agama": "Islam",
+        "pendidikan": "S1 Ekonomi",
+        "status": "IBU",
+        "children": [
+          {
+            "id": 3,
+            "nama_lengkap": "Andi Santoso",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "2000-01-20",
+            "agama": "Islam",
+            "pendidikan": "SMA",
+            "status": "ANAK ke-1"
+          },
+          {
+            "id": 4,
+            "nama_lengkap": "Siti Nurhaliza",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "2003-05-25",
+            "agama": "Islam",
+            "pendidikan": "SMP",
+            "status": "ANAK ke-2"
+          },
+          {
+            "id": 5,
+            "nama_lengkap": "Ali Fikri",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "2008-08-14",
+            "agama": "Islam",
+            "pendidikan": "SD",
+            "status": "ANAK ke-3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "nama_lengkap": "Rudi Hartono",
+    "jenis_kelamin": "Laki-laki",
+    "tanggal_lahir": "1970-12-12",
+    "agama": "Kristen",
+    "pendidikan": "S2 Manajemen",
+    "status": "AYAH",
+    "children": [
+      {
+        "id": 7,
+        "nama_lengkap": "Lina Permata",
+        "jenis_kelamin": "Perempuan",
+        "tanggal_lahir": "1975-07-04",
+        "agama": "Kristen",
+        "pendidikan": "S2 Pendidikan",
+        "status": "IBU",
+        "children": [
+          {
+            "id": 8,
+            "nama_lengkap": "Grace Hartono",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "2002-02-15",
+            "agama": "Kristen",
+            "pendidikan": "SMA",
+            "status": "ANAK ke-1"
+          },
+          {
+            "id": 9,
+            "nama_lengkap": "Thomas Hartono",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "2005-10-30",
+            "agama": "Kristen",
+            "pendidikan": "SMP",
+            "status": "ANAK ke-2"
+          },
+          {
+            "id": 10,
+            "nama_lengkap": "Fiona Hartono",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "2010-09-19",
+            "agama": "Kristen",
+            "pendidikan": "SD",
+            "status": "ANAK ke-3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "nama_lengkap": "Slamet Riyadi",
+    "jenis_kelamin": "Laki-laki",
+    "tanggal_lahir": "1980-11-01",
+    "agama": "Hindu",
+    "pendidikan": "S1 Hukum",
+    "status": "AYAH",
+    "children": [
+      {
+        "id": 12,
+        "nama_lengkap": "Komang Ayu",
+        "jenis_kelamin": "Perempuan",
+        "tanggal_lahir": "1983-09-25",
+        "agama": "Hindu",
+        "pendidikan": "S1 Sastra",
+        "status": "IBU",
+        "children": [
+          {
+            "id": 13,
+            "nama_lengkap": "Made Surya",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "2004-04-12",
+            "agama": "Hindu",
+            "pendidikan": "SMP",
+            "status": "ANAK ke-1"
+          },
+          {
+            "id": 14,
+            "nama_lengkap": "Kadek Ayu",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "2007-06-30",
+            "agama": "Hindu",
+            "pendidikan": "SD",
+            "status": "ANAK ke-2"
+          },
+          {
+            "id": 15,
+            "nama_lengkap": "Wayan Putri",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "2012-07-08",
+            "agama": "Hindu",
+            "pendidikan": "TK",
+            "status": "ANAK ke-3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "nama_lengkap": "Yusuf Hanafi",
+    "jenis_kelamin": "Laki-laki",
+    "tanggal_lahir": "1982-07-17",
+    "agama": "Islam",
+    "pendidikan": "S2 Informatika",
+    "status": "AYAH",
+    "children": [
+      {
+        "id": 17,
+        "nama_lengkap": "Nadia Aulia",
+        "jenis_kelamin": "Perempuan",
+        "tanggal_lahir": "1984-03-08",
+        "agama": "Islam",
+        "pendidikan": "S1 Psikologi",
+        "status": "IBU",
+        "children": [
+          {
+            "id": 18,
+            "nama_lengkap": "Raisa Hanafi",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "2010-01-11",
+            "agama": "Islam",
+            "pendidikan": "SD",
+            "status": "ANAK ke-1"
+          },
+          {
+            "id": 19,
+            "nama_lengkap": "Ammar Hanafi",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "2013-12-03",
+            "agama": "Islam",
+            "pendidikan": "TK",
+            "status": "ANAK ke-2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "nama_lengkap": "Agus Prasetyo",
+    "jenis_kelamin": "Laki-laki",
+    "tanggal_lahir": "1977-05-09",
+    "agama": "Katolik",
+    "pendidikan": "S1 Akuntansi",
+    "status": "AYAH",
+    "children": [
+      {
+        "id": 21,
+        "nama_lengkap": "Maria Prasetyo",
+        "jenis_kelamin": "Perempuan",
+        "tanggal_lahir": "1980-02-28",
+        "agama": "Katolik",
+        "pendidikan": "S1 Desain",
+        "status": "IBU",
+        "children": [
+          {
+            "id": 22,
+            "nama_lengkap": "Gabriel Prasetyo",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "2009-11-25",
+            "agama": "Katolik",
+            "pendidikan": "SD",
+            "status": "ANAK ke-1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "nama_lengkap": "Dwi Prasetyo",
+    "jenis_kelamin": "Laki-laki",
+    "tanggal_lahir": "1981-01-19",
+    "agama": "Katolik",
+    "pendidikan": "S1 Manajemen",
+    "status": "AYAH",
+    "children": [
+      {
+        "id": 24,
+        "nama_lengkap": "Dewi Prasetyo",
+        "jenis_kelamin": "Perempuan",
+        "tanggal_lahir": "1983-09-25",
+        "agama": "Katolik",
+        "pendidikan": "S1 Ekonomi",
+        "status": "IBU",
+        "children": [
+          {
+            "id": 25,
+            "nama_lengkap": "Andi Prasetyo",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "2007-06-30",
+            "agama": "Katolik",
+            "pendidikan": "SD",
+            "status": "ANAK ke-2"
+          },
+          {
+            "id": 26,
+            "nama_lengkap": "Wayan Prasetyo",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "2012-07-08",
+            "agama": "Katolik",
+            "pendidikan": "TK",
+            "status": "ANAK ke-3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "nama_lengkap": "Dwi Prasetyo",
+    "jenis_kelamin": "Laki-laki",
+    "tanggal_lahir": "1981-01-19",
+    "agama": "Katolik",
+    "pendidikan": "S1 Manajemen",
+    "status": "AYAH",
+    "children": [
+      {
+        "id": 28,
+        "nama_lengkap": "Dewi Prasetyo",
+        "jenis_kelamin": "Perempuan",
+        "tanggal_lahir": "1983-09-25",
+        "agama": "Katolik",
+        "pendidikan": "S1 Ekonomi",
+        "status": "IBU",
+        "children": [
+          {
+            "id": 29,
+            "nama_lengkap": "Andi Prasetyo",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "2007-06-30",
+            "agama": "Katolik",
+            "pendidikan": "SD",
+            "status": "ANAK ke-2"
+          },
+          {
+            "id": 30,
+            "nama_lengkap": "Wayan Prasetyo",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "2012-07-08",
+            "agama": "Katolik",
+            "pendidikan": "TK",
+            "status": "ANAK ke-3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "nama_lengkap": "Dwi Prasetyo",
+    "jenis_kelamin": "Laki-laki",
+    "tanggal_lahir": "1981-01-19",
+    "agama": "Katolik",
+    "pendidikan": "S1 Manajemen",
+    "status": "AYAH",
+    "children": [
+      {
+        "id": 32,
+        "nama_lengkap": "Dewi Prasetyo",
+        "jenis_kelamin": "Perempuan",
+        "tanggal_lahir": "1983-09-25",
+        "agama": "Katolik",
+        "pendidikan": "S1 Ekonomi",
+        "status": "IBU",
+        "children": [
+          {
+            "id": 33,
+            "nama_lengkap": "Andi Prasetyo",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "2007-06-30",
+            "agama": "Katolik",
+            "pendidikan": "SD",
+            "status": "ANAK ke-2"
+          },
+          {
+            "id": 34,
+            "nama_lengkap": "Wayan Prasetyo",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "2012-07-08",
+            "agama": "Katolik",
+            "pendidikan": "TK",
+            "status": "ANAK ke-3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "nama_lengkap": "Dwi Prasetyo",
+    "jenis_kelamin": "Laki-laki",
+    "tanggal_lahir": "1981-01-19",
+    "agama": "Katolik",
+    "pendidikan": "S1 Manajemen",
+    "status": "AYAH",
+    "children": [
+      {
+        "id": 36,
+        "nama_lengkap": "Dewi Prasetyo",
+        "jenis_kelamin": "Perempuan",
+        "tanggal_lahir": "1983-09-25",
+        "agama": "Katolik",
+        "pendidikan": "S1 Ekonomi",
+        "status": "IBU",
+        "children": [
+          {
+            "id": 37,
+            "nama_lengkap": "Andi Prasetyo",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "2007-06-30",
+            "agama": "Katolik",
+            "pendidikan": "SD",
+            "status": "ANAK ke-2"
+          },
+          {
+            "id": 38,
+            "nama_lengkap": "Wayan Prasetyo",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "2012-07-08",
+            "agama": "Katolik",
+            "pendidikan": "TK",
+            "status": "ANAK ke-3"
+          }
+        ]
+      }]
+  },
+  {
+    "id": 39,
+    "nama_lengkap": "Dwi Prasetyo",
+    "jenis_kelamin": "Laki-laki",
+    "tanggal_lahir": "1981-01-19",
+    "agama": "Katolik",
+    "pendidikan": "S1 Manajemen",
+    "status": "AYAH",
+    "children": [
+      {
+        "id": 40,
+        "nama_lengkap": "Dewi Prasetyo",
+        "jenis_kelamin": "Perempuan",
+        "tanggal_lahir": "1983-09-25",
+        "agama": "Katolik",
+        "pendidikan": "S1 Ekonomi",
+        "status": "IBU",
+        "children": [
+          {
+            "id": 41,
+            "nama_lengkap": "Andi Prasetyo",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "2007-06-30",
+            "agama": "Katolik",
+            "pendidikan": "SD",
+            "status": "ANAK ke-2"
+          },
+          {
+            "id": 42,
+            "nama_lengkap": "Wayan Prasetyo",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "2012-07-08",
+            "agama": "Katolik",
+            "pendidikan": "TK",
+            "status": "ANAK ke-3"
+          }
+        ]
+      }]
+  },
+  {
+    "id": 43,
+    "nama_lengkap": "Dwi Prasetyo",
+    "jenis_kelamin": "Laki-laki",
+    "tanggal_lahir": "1981-01-19",
+    "agama": "Katolik",
+    "pendidikan": "S1 Manajemen",
+    "status": "AYAH",
+    "children": [
+      {
+        "id": 44,
+        "nama_lengkap": "Dewi Prasetyo",
+        "jenis_kelamin": "Perempuan",
+        "tanggal_lahir": "1983-09-25",
+        "agama": "Katolik",
+        "pendidikan": "S1 Ekonomi",
+        "status": "IBU",
+        "children": [
+          {
+            "id": 45,
+            "nama_lengkap": "Andi Prasetyo",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "2007-06-30",
+            "agama": "Katolik",
+            "pendidikan": "SD",
+            "status": "ANAK ke-2"
+          },
+          {
+            "id": 46,
+            "nama_lengkap": "Wayan Prasetyo",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "2012-07-08",
+            "agama": "Katolik",
+            "pendidikan": "TK",
+            "status": "ANAK ke-3"
+          }
+        ]
+      }]
+  },
+  {
+    "id": 47,
+    "nama_lengkap": "Dwi Prasetyo",
+    "jenis_kelamin": "Laki-laki",
+    "tanggal_lahir": "1981-01-19",
+    "agama": "Katolik",
+    "pendidikan": "S1 Manajemen",
+    "status": "AYAH",
+    "children": [
+      {
+        "id": 48,
+        "nama_lengkap": "Dewi Prasetyo",
+        "jenis_kelamin": "Perempuan",
+        "tanggal_lahir": "1983-09-25",
+        "agama": "Katolik",
+        "pendidikan": "S1 Ekonomi",
+        "status": "IBU",
+        "children": [
+          {
+            "id": 49,
+            "nama_lengkap": "Andi Prasetyo",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "2007-06-30",
+            "agama": "Katolik",
+            "pendidikan": "SD",
+            "status": "ANAK ke-2"
+          },
+          {
+            "id": 50,
+            "nama_lengkap": "Wayan Prasetyo",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "2012-07-08",
+            "agama": "Katolik",
+            "pendidikan": "TK",
+            "status": "ANAK ke-3"
+          }
+        ]
+      }]
+  }
+]

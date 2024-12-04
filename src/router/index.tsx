@@ -4,6 +4,7 @@ import { CalendarPage } from "../pages/calendar";
 import { AutoSelectPage } from "../pages/autoselect";
 import { MainLayout } from "../layout/MainLayout";
 import { NotFound } from "../contex/not-found";
+import { Table } from "../pages/table";
 
 const finalRoutes = [
   {
@@ -22,6 +23,10 @@ const finalRoutes = [
       {
         path: "autoselect",
         element: <AutoSelectPage />,
+      },
+      {
+        path: "table",
+        element: <Table />,
       },
     ],
   },

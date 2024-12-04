@@ -58,6 +58,9 @@ export const Navbar = () => {
             <li>
               <Link to="/autoselect">AutoSelect</Link>
             </li>
+            <li>
+              <Link to="/table">Table</Link>
+            </li>
           </ul>
         </div>
         <div className="navbar-end">
