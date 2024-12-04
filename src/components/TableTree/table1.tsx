@@ -3,6 +3,7 @@ import { Table } from "../../models/table"
 
 const Table1 = ( { data }: { data: Table[] }) => {
   const [expandedRows, setExpandedRows] = useState<number[]>([]);
+  console.log(expandedRows)
 
   const toggleRow = (id: number) => {
     setExpandedRows((prev) =>
@@ -10,8 +11,8 @@ const Table1 = ( { data }: { data: Table[] }) => {
     );
   };
 
-  const renderRows = (rows: Table[], level = 0) => {
-    return rows.map((row: Table) => (
+  const renderRows = (data: Table[], level = 0) => {
+    return data.map((row: Table) => (
       <React.Fragment key={row.id.toString()}>
         <tr>
           <td
@@ -40,7 +41,7 @@ const Table1 = ( { data }: { data: Table[] }) => {
           <td style={ level > 0 && { paddingLeft: `${level * 20}px` } || { paddingLeft: "10px"}} className="py-2">
             {row.pendidikan}
           </td>
-          <td style={ level > 0 && { paddingLeft: `${level * 20}px` } || { paddingLeft: "10px"}} className="py-2">
+          <td style={ level > 0 && { paddingLeft: `${level * 20}px` } || { }} className="py-2 text-center">
             {row.status}
           </td>
         </tr>
@@ -53,15 +54,15 @@ const Table1 = ( { data }: { data: Table[] }) => {
 
   return (
     <div className="overflow-x-auto">
-      <table className="table table-md w-full text-left ">
+      <table className="table table-lg w-full text-left table-fixed">
         <thead>
           <tr>
-            <th className="border-b border-gray-300 px-6 py-2">Nama Lengkap</th>
-            <th className="border-b border-gray-300 px-6 py-2">Jenis Kelamin</th>
-            <th className="border-b border-gray-300 px-6 py-2">Tanggal Lahir</th>
-            <th className="border-b border-gray-300 px-6 py-2">Agama</th>
-            <th className="border-b border-gray-300 px-6 py-2">Pendidikan</th>
-            <th className="border-b border-gray-300 px-6 py-2">Status</th>
+            <th className="border-b border-gray-300 text-center py-2">Nama Lengkap</th>
+            <th className="border-b border-gray-300 text-center py-2 w-36">Jenis Kelamin</th>
+            <th className="border-b border-gray-300 text-center py-2 w-40">Tanggal Lahir</th>
+            <th className="border-b border-gray-300 text-center py-2 w-28">Agama</th>
+            <th className="border-b border-gray-300 text-center py-2 w-40">Pendidikan</th>
+            <th className="border-b border-gray-300 text-center py-2 w-40">Status</th>
           </tr>
         </thead>
         <tbody>{renderRows(data)}</tbody>

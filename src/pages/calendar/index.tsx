@@ -9,12 +9,12 @@ export const CalendarPage = () => {
       <h1 className="text-3xl font-bold text-center my-6">Calendar</h1>
       <div className="flex justify-center w-2/3 mx-auto h-screen">
         <div className="overflow-x-auto w-full">
-          <table className="table-lg w-full table-zebra">
+          <table className="table-lg w-full table-zebra table-fixed">
             {/* head */}
             <thead>
               <tr>
-                <th></th>
-                <th>Name Library</th>
+                <th className="w-1/12"></th>
+                <th className="w-2/12">Name Library</th>
                 <th>Preview</th>
               </tr>
             </thead>
