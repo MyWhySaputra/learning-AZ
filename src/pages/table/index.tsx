@@ -7,7 +7,7 @@ export const Table = () => {
       <div className="container mx-auto h-screen">
         <h1 className="text-3xl font-bold text-center my-6">Table</h1>
         <br />
-        <h1 className="text-3xl font-bold my-6">Table</h1>
+        <h1 className="text-3xl font-bold my-6">Table Hirarki</h1>
         <Table1 data={data} />
       </div>
     </>

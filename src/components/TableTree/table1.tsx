@@ -15,7 +15,7 @@ const Table1 = ( { data }: { data: Table[] }) => {
       <React.Fragment key={row.id.toString()}>
         <tr>
           <td
-            style={{ paddingLeft: `${level * 20}px` }} // Adjust padding per level
+            style={level > 0 && { paddingLeft: `${level * 20}px` } || { paddingLeft: "10px"}} // Adjust padding per level
             className="py-2"
           >
             {row.children && (
@@ -28,19 +28,19 @@ const Table1 = ( { data }: { data: Table[] }) => {
             )}
             {row.nama_lengkap}
           </td>
-          <td style={{ paddingLeft: `${level * 20}px` }} className="py-2">
+          <td style={ level > 0 && { paddingLeft: `${level * 20}px` } || { paddingLeft: "10px"}} className="py-2">
             {row.jenis_kelamin}
           </td>
-          <td style={{ paddingLeft: `${level * 20}px` }} className="py-2">
+          <td style={ level > 0 && { paddingLeft: `${level * 20}px` } || { paddingLeft: "10px"}} className="py-2">
             {row.tanggal_lahir}
           </td>
-          <td style={{ paddingLeft: `${level * 20}px` }} className="py-2">
+          <td style={ level > 0 && { paddingLeft: `${level * 20}px` } || { paddingLeft: "10px"}} className="py-2">
             {row.agama}
           </td>
-          <td style={{ paddingLeft: `${level * 20}px` }} className="py-2">
+          <td style={ level > 0 && { paddingLeft: `${level * 20}px` } || { paddingLeft: "10px"}} className="py-2">
             {row.pendidikan}
           </td>
-          <td style={{ paddingLeft: `${level * 20}px` }} className="py-2">
+          <td style={ level > 0 && { paddingLeft: `${level * 20}px` } || { paddingLeft: "10px"}} className="py-2">
             {row.status}
           </td>
         </tr>
@@ -52,16 +52,16 @@ const Table1 = ( { data }: { data: Table[] }) => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto my-8">
-      <table className="table-auto border-collapse border border-gray-300 w-full text-left">
+    <div className="overflow-x-auto">
+      <table className="table table-md w-full text-left ">
         <thead>
           <tr>
-            <th className="border-b border-gray-300 px-4 py-2">Nama Lengkap</th>
-            <th className="border-b border-gray-300 px-4 py-2">Jenis Kelamin</th>
-            <th className="border-b border-gray-300 px-4 py-2">Tanggal Lahir</th>
-            <th className="border-b border-gray-300 px-4 py-2">Agama</th>
-            <th className="border-b border-gray-300 px-4 py-2">Pendidikan</th>
-            <th className="border-b border-gray-300 px-4 py-2">Status</th>
+            <th className="border-b border-gray-300 px-6 py-2">Nama Lengkap</th>
+            <th className="border-b border-gray-300 px-6 py-2">Jenis Kelamin</th>
+            <th className="border-b border-gray-300 px-6 py-2">Tanggal Lahir</th>
+            <th className="border-b border-gray-300 px-6 py-2">Agama</th>
+            <th className="border-b border-gray-300 px-6 py-2">Pendidikan</th>
+            <th className="border-b border-gray-300 px-6 py-2">Status</th>
           </tr>
         </thead>
         <tbody>{renderRows(data)}</tbody>
