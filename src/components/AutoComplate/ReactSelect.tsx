@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Select from "react-select";
+import Select, { StylesConfig } from "react-select";
 import { Product } from "../../models/autoselect";
 
 export const ReactSelects = ({ data }: { data: Product[] }) => {
@@ -28,8 +28,8 @@ export const ReactSelects = ({ data }: { data: Product[] }) => {
   };
 
   // Kustomisasi gaya di react-select
-  const customStyles = {
-    control: (provided: any) => ({
+  const customStyles: StylesConfig<Product, false> = {
+    control: (provided) => ({
       ...provided,
       borderColor: "#ccc", // Mengubah border kontrol
       "&:hover": {
@@ -37,15 +37,15 @@ export const ReactSelects = ({ data }: { data: Product[] }) => {
       },
       boxShadow: "none", // Menghilangkan shadow biru
     }),
-    singleValue: (provided: any) => ({
+    singleValue: (provided) => ({
       ...provided,
       color: "#333", // Warna teks produk yang dipilih
     }),
-    menu: (provided: any) => ({
+    menu: (provided) => ({
       ...provided,
       backgroundColor: "white", // Ubah warna background dropdown
     }),
-    option: (provided: any, state: any) => ({
+    option: (provided, state) => ({
       ...provided,
       backgroundColor: state.isSelected ? "#f0f0f0" : "white", // Warna latar belakang opsi yang dipilih
       color: state.isSelected ? "black" : "#333", // Warna teks saat opsi dipilih

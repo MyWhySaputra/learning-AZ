@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Table } from "../../models/table"
 
-const Table1 = ( { data }: { data: Table[] }) => {
+const Table2 = ( { data }: { data: Table[] }) => {
   const [expandedRows, setExpandedRows] = useState<number[]>([]);
 
   const toggleRow = (id: number) => {
@@ -70,4 +70,4 @@ const Table1 = ( { data }: { data: Table[] }) => {
   );
 };
 
-export default Table1;
+export default Table2;

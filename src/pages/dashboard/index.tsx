@@ -43,6 +43,18 @@ export const DashboardPage = () => {
           </div>
         </div>
       </div>
+
+      <div className="container px-6 py-16 mx-auto min-h-screen">
+        <div className="">
+          <div className="relative flex aspect-[2] items-center justify-center overflow-hidden rounded-t-full bg-blue-400">
+            <div className="absolute top-0 aspect-square w-full rotate-[calc(72deg-45deg)] bg-gradient-to-tr from-transparent from-50% to-white to-50% transition-transform duration-500"></div>
+            <div className="absolute top-1/4 flex aspect-square w-3/4 justify-center rounded-full bg-blue-100"></div>
+            <div className="absolute bottom-0 w-full truncate text-center text-[20vmax] leading-none">
+              40%
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
