@@ -39,6 +39,11 @@ export const NoLibrary = ({ data }: { data: Product[] }) => {
     );
   };
 
+  const handleSelectProduct = (title: string) => {
+    setQuery(title); // Set the selected product's title in the input
+    setFilteredData([]); // Optionally clear the suggestions
+  };
+
   return (
     <div className="font-Parkinsans relative">
       <input
@@ -53,7 +58,7 @@ export const NoLibrary = ({ data }: { data: Product[] }) => {
           <li
             key={item.id}
             className="p-2 cursor-pointer hover:bg-gray-100"
-            onClick={() => alert(`You selected: ${item.title}`)}
+            onClick={() => handleSelectProduct(item.title)} // Handle product selection
           >
             {highlightMatch(item.title, query)}
           </li>
