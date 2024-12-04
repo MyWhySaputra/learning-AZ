@@ -71,4 +71,8 @@
     padding: 0 2rem;
     border-radius: 10px;
   }
+
+  .table-hover tbody tr:hover {
+    background-color: #e0f7fa; /* Ganti dengan warna biru yang diinginkan */
+  }
 }

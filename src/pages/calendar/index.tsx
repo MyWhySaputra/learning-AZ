@@ -2,7 +2,7 @@ import { NoLibrary } from "../../components/Calendar/NoLibrary";
 import DatePicker2 from "../../components/Calendar/Tailgrid2";
 import DatePickerWithRange from "../../components/Calendar/Shadcn";
 import { Primereact } from "../../components/Calendar/Primereact";
-//import Calendar from "../../components/Calendar/ReactTailwindDatepicker";
+import Calendar from "../../components/Calendar/ReactTailwindDatepicker";
 
 export const CalendarPage = () => {
   return (
@@ -31,8 +31,8 @@ export const CalendarPage = () => {
               {/* row 2 */}
               <tr>
                 <th>2</th>
-                <td>TailGrid</td>
-                <td><DatePicker2 /></td>
+                <td>PrimeReact</td>
+                <td><Primereact /></td>
               </tr>
               {/* row 3 */}
               <tr>
@@ -43,8 +43,14 @@ export const CalendarPage = () => {
               {/* row 4 */}
               <tr>
                 <th>4</th>
-                <td>PrimeReact</td>
-                <td><Primereact /></td>
+                <td>ReactTailwindDatepicker</td>
+                <td><Calendar /></td>
+              </tr>
+              {/* row 5 */}
+              <tr>
+                <th>5</th>
+                <td>TailGrid</td>
+                <td><DatePicker2 /></td>
               </tr>
             </tbody>
           </table>
