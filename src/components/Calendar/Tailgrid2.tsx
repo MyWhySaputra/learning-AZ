@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef, SetStateAction } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function DatePicker2() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedStartDate, setSelectedStartDate] = useState<string | null>(null);
-  const [selectedEndDate, setSelectedEndDate] = useState(null);
+  const [selectedEndDate, setSelectedEndDate] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
   const datepickerRef = useRef(null);
@@ -95,8 +95,8 @@ export default function DatePicker2() {
     setIsOpen(false);
   };
 
-  const handleDocumentClick = (e: { target: any; }) => {
-    if (datepickerRef.current && !datepickerRef.current.contains(e.target)) {
+  const handleDocumentClick = (e: MouseEvent) => {
+    if (datepickerRef.current && !(datepickerRef.current as HTMLElement).contains(e.target as Node)) {
       setIsOpen(false);
     }
   };
