@@ -7,7 +7,7 @@ interface Product {
   title: string;
 }
 
-export const ReactSelects = ({ data }: { data: Product[] }) => {
+export const Test = ({ data }: { data: Product[] }) => {
   const [query, setQuery] = useState("");
 
   const formatOptionLabel = (item: Product) => {

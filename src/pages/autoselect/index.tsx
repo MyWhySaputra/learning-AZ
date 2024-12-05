@@ -3,7 +3,16 @@ import { useEffect, useState } from "react";
 import { Product } from "../../models/autoselect";
 import { NoLibrary } from "../../components/AutoComplate/NoLibrary";
 import { ReactSelects } from "../../components/AutoComplate/ReactSelect";
+// import { Test } from "../../components/AutoComplate/test";
 import datas from "../../data/products.json";
+
+// const products = [
+//   { id: 1, title: "Apple" },
+//   { id: 2, title: "Orange" },
+//   { id: 3, title: "Banana" },
+//   { id: 4, title: "Pineapple" },
+//   { id: 5, title: "Grapes Pear" },
+// ];
 
 export const AutoSelectPage = () => {
   const [data, setData] = useState<Product[]>([]);
@@ -55,8 +64,8 @@ export const AutoSelectPage = () => {
               {/* row 3 */}
               {/* <tr>
                 <th>3</th>
-                <td>Flowbite</td>
-                <td><FlowBite data={data} /></td>
+                <td>Test</td>
+                <td><Test data={products} /></td>
               </tr> */}
             </tbody>
           </table>
