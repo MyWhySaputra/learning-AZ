@@ -5,6 +5,7 @@ import { AutoSelectPage } from "../pages/autoselect";
 import { MainLayout } from "../layout/MainLayout";
 import { NotFound } from "../contex/not-found";
 import { Table } from "../pages/table";
+import { Menu } from "../pages/menu";
 
 const finalRoutes = [
   {
@@ -27,6 +28,10 @@ const finalRoutes = [
       {
         path: "table",
         element: <Table />,
+      },
+      {
+        path: "menu",
+        element: <Menu />
       },
     ],
   },

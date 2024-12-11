@@ -1,7 +1,7 @@
 import { useState, Fragment } from "react";
-import { Table } from "../../models/table"
+import { Table } from "../../models/table";
 
-const Table1 = ( { data }: { data: Table[] }) => {
+const Table1 = ({ data }: { data: Table[] }) => {
   const [expandedRows, setExpandedRows] = useState<number[]>([]);
 
   const toggleRow = (id: number) => {
@@ -13,10 +13,10 @@ const Table1 = ( { data }: { data: Table[] }) => {
   const renderRows = (data: Table[], level = 0) => {
     return data.map((row: Table) => (
       <Fragment key={row.id.toString()}>
-        <tr>
+        <tr className="hover:bg-gray-100">
           <td
-            style={level > 0 && { paddingLeft: `${level * 20}px` } || { paddingLeft: "10px"}} // Adjust padding per level
-            className="py-2"
+            style={{ paddingLeft: `${level * 20}px` }}
+            className="py-2 text-sm"
           >
             {row.children && (
               <button
@@ -53,15 +53,27 @@ const Table1 = ( { data }: { data: Table[] }) => {
 
   return (
     <div className="overflow-x-auto">
-      <table className="table table-lg w-full text-left table-fixed table-hover">
+      <table className="table-auto w-full text-left border-collapse">
         <thead>
-          <tr>
-            <th className="border-b border-gray-300 text-left py-2">Nama Lengkap</th>
-            <th className="border-b border-gray-300 text-left py-2 w-36">Jenis Kelamin</th>
-            <th className="border-b border-gray-300 text-left py-2 w-40">Tanggal Lahir</th>
-            <th className="border-b border-gray-300 text-left py-2 w-28">Agama</th>
-            <th className="border-b border-gray-300 text-left py-2 w-40">Pendidikan</th>
-            <th className="border-b border-gray-300 text-center py-2 w-40">Status</th>
+          <tr className="bg-gray-100">
+            <th className="border-b border-gray-300 py-3 px-4 text-sm">
+              Nama Lengkap
+            </th>
+            <th className="border-b border-gray-300 py-3 px-4 text-sm">
+              Jenis Kelamin
+            </th>
+            <th className="border-b border-gray-300 py-3 px-4 text-sm">
+              Tanggal Lahir
+            </th>
+            <th className="border-b border-gray-300 py-3 px-4 text-sm">
+              Agama
+            </th>
+            <th className="border-b border-gray-300 py-3 px-4 text-sm">
+              Pendidikan
+            </th>
+            <th className="border-b border-gray-300 py-3 px-4 text-center text-sm">
+              Status
+            </th>
           </tr>
         </thead>
         <tbody>{renderRows(data)}</tbody>

@@ -5,7 +5,7 @@ export const Primereact = () => {
     const [dates, setDates] = useState<(Date | null)[] | null>(null);
 
     return (
-      <div className="card flex justify-content-center w-1/2">
+      <div className="card flex justify-content-center">
         <Calendar
           value={dates}
           onChange={(e) => setDates(e.value as (Date | null)[])}

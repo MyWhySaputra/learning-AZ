@@ -44,7 +44,7 @@ export const DashboardPage = () => {
         </div>
       </div>
 
-      <div className="container px-6 py-16 mx-auto min-h-screen">
+      {/* <div className="container px-6 py-16 mx-auto min-h-screen">
         <div className="">
           <div className="relative flex aspect-[2] items-center justify-center overflow-hidden rounded-t-full bg-blue-400">
             <div className="absolute top-0 aspect-square w-full rotate-[calc(72deg-45deg)] bg-gradient-to-tr from-transparent from-50% to-white to-50% transition-transform duration-500"></div>
@@ -54,7 +54,7 @@ export const DashboardPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
