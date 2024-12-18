@@ -2,7 +2,7 @@ import Table1 from "@/components/TableTree/table1";
 import data from "../../data/keluarga.json";
 import Table2 from "@/components/TableTree/table2";
 import "primeicons/primeicons.css";
-import 'primeflex/primeflex.css';
+//import 'primeflex/primeflex.css';
 import "primereact/resources/primereact.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 //import TableWithPrimeFlex from "@/components/TableTree/TableWithPrimeFlex";

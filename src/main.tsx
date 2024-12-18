@@ -4,6 +4,7 @@ import "./index.css";
 import { LoadingProvider } from "./contex/loading.tsx";
 import { MantineProvider } from "@mantine/core";
 import App from "./App.tsx";
+import "./language.tsx"
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

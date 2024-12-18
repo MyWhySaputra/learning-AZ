@@ -6,6 +6,7 @@ import { MainLayout } from "../layout/MainLayout";
 import { NotFound } from "../contex/not-found";
 import { Table } from "../pages/table";
 import { Menu } from "../pages/menu";
+import { Timelines } from "../pages/timeline";
 
 const finalRoutes = [
   {
@@ -32,6 +33,10 @@ const finalRoutes = [
       {
         path: "menu",
         element: <Menu />
+      },
+      {
+        path: "timeline",
+        element: <Timelines />
       },
     ],
   },

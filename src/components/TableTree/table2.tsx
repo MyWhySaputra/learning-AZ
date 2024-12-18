@@ -217,7 +217,7 @@ export default function Table2() {
   };
   const getHeader = () => {
     return (
-      <div className="flex flex-col md:flex-row align-items-center gap-3">
+      <div className="flex flex-col md:flex-row items-center gap-3">
         <div className="w-full md:w-1/2">
           <IconField iconPosition="left">
             <InputIcon className="pi pi-search" />
@@ -230,7 +230,7 @@ export default function Table2() {
                 }
               }}
               placeholder="Search"
-              className="w-full md:w-5"
+              className="w-full md:w-9/12"
             />
           </IconField>
         </div>
@@ -323,10 +323,11 @@ export default function Table2() {
         header="Edit Data"
         visible={isEditModalVisible}
         className="w-full mx-4 lg:w-4"
+        style={{ width: '30rem' }}
         modal
         onHide={() => setEditModalVisible(false)}
       >
-        <div className="flex flex-column gap-2 mb-3">
+        <div className="flex flex-col gap-2 mb-3">
           <span>Nama Lengkap</span>
           <InputText
             value={selectedNode?.data?.nama_lengkap || ""}
@@ -338,7 +339,7 @@ export default function Table2() {
             }
           />
         </div>
-        <div className="flex flex-column gap-2 mb-3">
+        <div className="flex flex-col gap-2 mb-3">
           <span>Jenis Kelamin</span>
           <Dropdown
             value={selectedNode?.data?.jenis_kelamin || ""}
@@ -355,7 +356,7 @@ export default function Table2() {
             optionLabel="label"
           />
         </div>
-        <div className="flex flex-column gap-2 mb-3">
+        <div className="flex flex-col gap-2 mb-3">
           <span>Tanggal Lahir</span>
           <Calendar
             value={
@@ -379,10 +380,9 @@ export default function Table2() {
             }}
             dateFormat="yy-mm-dd"
             showIcon
-            touchUI
           />
         </div>
-        <div className="flex flex-column gap-2 mb-3">
+        <div className="flex flex-col gap-2 mb-3">
           <span>Agama</span>
           <InputText
             value={selectedNode?.data?.agama || ""}
@@ -394,7 +394,7 @@ export default function Table2() {
             }
           />
         </div>
-        <div className="flex flex-column gap-2 mb-3">
+        <div className="flex flex-col gap-2 mb-3">
           <span>Pendidikan</span>
           <InputText
             value={selectedNode?.data?.pendidikan || ""}
@@ -406,7 +406,7 @@ export default function Table2() {
             }
           />
         </div>
-        <div className="flex flex-column gap-2 mb-3">
+        <div className="flex flex-col gap-2 mb-3">
           <span>Status</span>
           <InputText
             value={selectedNode?.data?.status || ""}
@@ -439,6 +439,7 @@ export default function Table2() {
         header="Confirm Delete"
         visible={isDeleteModalVisible}
         className="w-full mx-4 lg:w-4"
+        style={{ width: '30rem' }}
         modal
         onHide={() => setDeleteModalVisible(false)}
       >
@@ -447,11 +448,11 @@ export default function Table2() {
           <b>{selectedNode?.data?.nama_lengkap}</b>?
         </p>
         {selectedNode?.children && selectedNode.children.length > 0 && (
-          <div className="mt-3">
+          <div className="mt-6">
             <p className="mb-2">
               This node has children. What do you want to do?
             </p>
-            <div className="flex flex-column gap-2">
+            <div className="flex flex-col gap-2 mb-8">
               <div className="flex align-items-center">
                 <RadioButton
                   name="delete"
@@ -511,10 +512,11 @@ export default function Table2() {
         header="Add New Node"
         visible={isCreateModalVisible}
         className="w-full mx-4 lg:w-4"
+        style={{ width: '30rem' }}
         modal
         onHide={() => setCreateModalVisible(false)}
       >
-        <div className="flex flex-column gap-2 mb-3">
+        <div className="flex flex-col gap-2 mb-3">
           <span>Pilih Parent</span>
           <Dropdown
             value={newNodeData.parentKey}
@@ -526,7 +528,7 @@ export default function Table2() {
             placeholder="Select Parent"
           />
         </div>
-        <div className="flex flex-column gap-2 mb-3">
+        <div className="flex flex-col gap-2 mb-3">
           <span>Nama Lengkap</span>
           <InputText
             value={newNodeData.nama_lengkap}
@@ -535,7 +537,7 @@ export default function Table2() {
             }
           />
         </div>
-        <div className="flex flex-column gap-2 mb-3">
+        <div className="flex flex-col gap-2 mb-3">
           <span>Jenis Kelamin</span>
           <Dropdown
             value={newNodeData.jenis_kelamin}
@@ -549,7 +551,7 @@ export default function Table2() {
             optionLabel="label"
           />
         </div>
-        <div className="flex flex-column gap-2 mb-3">
+        <div className="flex flex-col gap-2 mb-3">
           <span>Tanggal Lahir</span>
           <Calendar
             value={
@@ -572,10 +574,9 @@ export default function Table2() {
             }}
             dateFormat="yy-mm-dd"
             showIcon
-            touchUI
           />
         </div>
-        <div className="flex flex-column gap-2 mb-3">
+        <div className="flex flex-col gap-2 mb-3">
           <span>Agama</span>
           <InputText
             value={newNodeData.agama}
@@ -584,7 +585,7 @@ export default function Table2() {
             }
           />
         </div>
-        <div className="flex flex-column gap-2 mb-3">
+        <div className="flex flex-col gap-2 mb-3">
           <span>Pendidikan</span>
           <InputText
             value={newNodeData.pendidikan}
@@ -593,7 +594,7 @@ export default function Table2() {
             }
           />
         </div>
-        <div className="flex flex-column gap-2 mb-3">
+        <div className="flex flex-col gap-2 mb-3">
           <span>Status</span>
           <InputText
             value={newNodeData.status}
