@@ -7,6 +7,7 @@ import { NotFound } from "../contex/not-found";
 import { Table } from "../pages/table";
 import { Menu } from "../pages/menu";
 import { Timelines } from "../pages/timeline";
+import { ImportIMG } from "../pages/importIMG";
 
 const finalRoutes = [
   {
@@ -37,6 +38,10 @@ const finalRoutes = [
       {
         path: "timeline",
         element: <Timelines />
+      },
+      {
+        path: "import",
+        element: <ImportIMG />,
       },
     ],
   },

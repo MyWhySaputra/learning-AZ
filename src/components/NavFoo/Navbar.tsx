@@ -51,6 +51,9 @@ export const Navbar = () => {
               <li>
                 <Link to="/timeline">{t("Timeline")}</Link>
               </li>
+              <li>
+                <Link to="/import">ImportIMG</Link>
+              </li>
             </ul>
           </div>
           <a className="btn btn-ghost text-2xl">{t("LEARNING")}</a>
@@ -75,6 +78,9 @@ export const Navbar = () => {
             <li>
               <Link to="/timeline">{t("Timeline")}</Link>
             </li>
+            <li>
+              <Link to="/import">ImportIMG</Link>
+            </li>
           </ul>
         </div>
         <div className="navbar-end">
@@ -83,10 +89,7 @@ export const Navbar = () => {
             onClick={() => handleTrans("en")}
             className="mr-2"
           />
-          <Button
-            label="ID"
-            onClick={() => handleTrans("id")}
-          />
+          <Button label="ID" onClick={() => handleTrans("id")} />
         </div>
       </div>
     </>

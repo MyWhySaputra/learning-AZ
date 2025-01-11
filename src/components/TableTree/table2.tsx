@@ -11,6 +11,8 @@ import { TreeNode } from "primereact/treenode";
 import { NodeService } from "./dataService";
 import { Calendar } from "primereact/calendar";
 import { RadioButton } from "primereact/radiobutton";
+import Swal from "sweetalert2";
+import { useLoading } from "./../../contex/loading";
 
 export default function Table2() {
   const [nodes, setNodes] = useState<TreeNode[]>([]);
@@ -27,10 +29,14 @@ export default function Table2() {
     status: "",
     parentKey: "",
   });
+  const { setLoading } = useLoading();
 
   const [options, setOptions] = useState<{ label: string; value: string }[]>(
     []
   );
+
+  const [messageError, setMessageError] = useState("");
+  const [messageSuccess, setMessageSuccess] = useState("");
 
   const [globalFilter, setGlobalFilter] = useState("");
   const [deleteOption, setDeleteOption] = useState<
@@ -42,6 +48,28 @@ export default function Table2() {
   }, []);
 
   const date = `${Date.now()}`;
+
+  useEffect(() => {
+    if (messageSuccess) {
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: messageSuccess,
+      });
+      setMessageSuccess("");
+    }
+  }, [messageSuccess]);
+
+  useEffect(() => {
+    if (messageError) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: messageError,
+      });
+      setMessageError("");
+    }
+  }, [messageError]);
 
   const getAllNodesAsOptions = (
     treeNodes: TreeNode[]
@@ -132,6 +160,19 @@ export default function Table2() {
   const handleaddmodal = () => {
     setCreateModalVisible(true);
     setOptions(getAllNodesAsOptions(nodes));
+
+    // Set parentKey ke node yang terpilih jika ada
+    if (selectedNode) {
+      setNewNodeData((prev) => ({
+        ...prev,
+        parentKey: selectedNode.key?.toString() || "",
+      }));
+    } else {
+      setNewNodeData((prev) => ({
+        ...prev,
+        parentKey: options[0].value, // Atau nilai default lainnya
+      }));
+    }
   };
 
   const handleEdit = (node: TreeNode) => {
@@ -145,24 +186,6 @@ export default function Table2() {
   };
 
   const handleCreate = () => {
-    const newKey = date; // Buat key unik untuk node baru
-    const newNode: TreeNode = {
-      key: newKey,
-      data: {
-        nama_lengkap: newNodeData.nama_lengkap,
-        jenis_kelamin: newNodeData.jenis_kelamin,
-        tanggal_lahir: newNodeData.tanggal_lahir,
-        agama: newNodeData.agama,
-        pendidikan: newNodeData.pendidikan,
-        status: newNodeData.status,
-      },
-      children: [],
-    };
-
-    setNodes((prevNodes) =>
-      addNode(prevNodes, newNodeData.parentKey || date, newNode)
-    );
-
     setCreateModalVisible(false);
     setNewNodeData({
       nama_lengkap: "",
@@ -173,26 +196,67 @@ export default function Table2() {
       status: "",
       parentKey: "", // Reset parentKey ke value "No Parent"
     });
+
+    setLoading(true);
+
+    setTimeout(() => {
+      const newKey = date; // Buat key unik untuk node baru
+      const newNode: TreeNode = {
+        key: newKey,
+        data: {
+          nama_lengkap: newNodeData.nama_lengkap,
+          jenis_kelamin: newNodeData.jenis_kelamin,
+          tanggal_lahir: newNodeData.tanggal_lahir,
+          agama: newNodeData.agama,
+          pendidikan: newNodeData.pendidikan,
+          status: newNodeData.status,
+        },
+        children: [],
+      };
+
+      setNodes((prevNodes) =>
+        addNode(prevNodes, newNodeData.parentKey || date, newNode)
+      );
+
+      setLoading(false);
+      setMessageSuccess("Data berhasil ditambahkan");
+    }, 1000);
   };
 
   const saveEdit = () => {
-    if (selectedNode) {
-      setNodes((prevNodes) => updateNode(prevNodes, selectedNode));
-    }
     setEditModalVisible(false);
+
+    setLoading(true);
+
+    setTimeout(() => {
+      if (selectedNode) {
+        setNodes((prevNodes) => updateNode(prevNodes, selectedNode));
+      }
+
+      setLoading(false);
+      setMessageSuccess("Data berhasil diubah");
+    }, 1000);
   };
 
   const confirmDelete = () => {
-    if (selectedNode) {
-      setNodes((prevNodes) =>
-        deleteNode(
-          prevNodes,
-          String(selectedNode.key!),
-          deleteOption === "keepChildren"
-        )
-      );
-    }
     setDeleteModalVisible(false);
+
+    setLoading(true);
+
+    setTimeout(() => {
+      if (selectedNode) {
+        setNodes((prevNodes) =>
+          deleteNode(
+            prevNodes,
+            String(selectedNode.key!),
+            deleteOption === "keepChildren"
+          )
+        );
+      }
+
+      setLoading(false);
+      setMessageSuccess("Data berhasil dihapus");
+    }, 1000);
   };
 
   const actionTemplate = (node: TreeNode) => {
@@ -253,6 +317,21 @@ export default function Table2() {
     <div className="card">
       <TreeTable
         value={nodes}
+        onSelectionChange={(e) => {
+          if (typeof e.value === "string") {
+            // Find the TreeNode object corresponding to the selected key
+            const selectedNode = nodes.find((node) => node.key === e.value);
+            setSelectedNode(selectedNode || null);
+          } else {
+            // Handle multiple selection case (if needed)
+            // For single selection mode, this case should not occur
+            console.error(
+              "Multiple selection is not supported in single selection mode"
+            );
+          }
+        }}
+        selectionMode="single"
+        selectionKeys={selectedNode?.key as string}
         removableSort
         stateKey="tree-table-state-demo-session"
         stateStorage="session"
@@ -323,7 +402,7 @@ export default function Table2() {
         header="Edit Data"
         visible={isEditModalVisible}
         className="w-full mx-4 lg:w-4"
-        style={{ width: '30rem' }}
+        style={{ width: "30rem" }}
         modal
         onHide={() => setEditModalVisible(false)}
       >
@@ -439,7 +518,7 @@ export default function Table2() {
         header="Confirm Delete"
         visible={isDeleteModalVisible}
         className="w-full mx-4 lg:w-4"
-        style={{ width: '30rem' }}
+        style={{ width: "30rem" }}
         modal
         onHide={() => setDeleteModalVisible(false)}
       >
@@ -460,9 +539,7 @@ export default function Table2() {
                   onChange={() => setDeleteOption("withChildren")}
                   checked={deleteOption === "withChildren"}
                 />
-                <label className="ml-2">
-                    Delete with Children
-                </label>
+                <label className="ml-2">Delete with Children</label>
               </div>
               <div className="flex align-items-center">
                 <RadioButton
@@ -471,9 +548,7 @@ export default function Table2() {
                   onChange={() => setDeleteOption("keepChildren")}
                   checked={deleteOption === "keepChildren"}
                 />
-                <label className="ml-2">
-                    Keep Children
-                </label>
+                <label className="ml-2">Keep Children</label>
               </div>
               {/* <Button
                 label="Delete with Children"
@@ -512,7 +587,7 @@ export default function Table2() {
         header="Add New Node"
         visible={isCreateModalVisible}
         className="w-full mx-4 lg:w-4"
-        style={{ width: '30rem' }}
+        style={{ width: "30rem" }}
         modal
         onHide={() => setCreateModalVisible(false)}
       >
